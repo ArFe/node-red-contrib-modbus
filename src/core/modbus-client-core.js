@@ -62,11 +62,12 @@ de.biancoroyal.modbus.core.client.startStateService = function (toggleMachine) {
 }
 
 de.biancoroyal.modbus.core.client.checkUnitId = function (unitid, clientType) {
-  if (clientType === 'tcp') {
-    return unitid >= 0 && unitid <= 255
-  } else {
-    return unitid >= 0 && unitid <= 247
-  }
+  return unitid >= 0 && unitid <= 65535
+  // if (clientType === 'tcp') {
+  //   return unitid >= 0 && unitid <= 255
+  // } else {
+  //   return unitid >= 0 && unitid <= 247
+  // }
 }
 
 de.biancoroyal.modbus.core.client.getLogFunction = function (node) {
